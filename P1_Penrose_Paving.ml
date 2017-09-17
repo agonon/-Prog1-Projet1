@@ -61,6 +61,7 @@ let rec divide generation points typ triangle_verteces =
 
 ;;
 
+(* the following function gives you the verteces of a obtuse triangle "ratio" time bigger than the basic one used for the Paving of Penrose *)
 let init_obtus ratio =
   let x = [|50.; 50.|] and y = [|50. +. ratio *. phi;50.|] in
   let z = [|y.(0) /. 2. +. 50.;50. +. sqrt((ratio) ** 2. -. (y.(0) /. 2.) ** 2.)|] in
