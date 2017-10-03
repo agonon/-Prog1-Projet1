@@ -2,7 +2,7 @@ This folder contains 5 files :
 
 -penrose_base.ml;
 -penrose_animation.ml;
--penrose_optimization.ml
+-penrose_optimization.ml;
 -penrose_idth_division.ml;
 -READ ME.
 
