@@ -1,0 +1,56 @@
+This folder contains 9 files :
+
+-penrose_base.ml;
+-penrose_animation.ml;
+-penrose_optimization.ml
+-penrose_idth_division.ml;
+-base_hanoi.ml;
+-hanoi_animation.ml;
+-hanoi_generate_data.ml;
+-data10.data;
+-READ ME.
+
+The files with the ".ml" extension need to be open in an a code editor/IDE in order to execute each instruction from top to bottom of the code. You can also launch ocaml in a terminal before writing  " #use "file.ml";; ". 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+THE PAVING OF PENROSE
+
+
+Overall, each file is organized as follows : the main source code solving the problem separated from the instructions and functions which allows the reader to test easier the code. The separation between these two parts is indicated by a comment as " (*/////////////*) ".
+The following content is a more detailed description of the files related to the Paving of Penrose problem.
+
+PENROSE_BASE.ML
+
+Base.ml contains the basic and unsophisticated functions to pave a triangle with the paving of Penrose. The function "divide" takes as first argument a natural different from 0.
+
+PENROSE_ANIMATION.ML 
+
+The new function "wait" wich takes a float "dt" as argument makes the interpreter wait "dt" seconds when he reads this instruction. This function is used inside the function "draw" to animate the drawing.
+
+PENROSE_OPTIMIZATION.ML
+
+The source code is more optimized than in the two previous files : each triangle edge is drawn only once thanks to changes operated inside the functions "divide" and "draw". We chose to keep the animation so as to verify visually that each edge seems indeed drawn only once.
+
+PENROSE_WIDTH_DIVISION.ML
+
+Up to now the code was calculating the triangles to draw in depth. The function "width_division" has the same role than the function until now known as "divide" but it calculates the triangles to draw generation by generation ("in width"). We chose to keep the animation and the optimization developed in the previous files in order to observate how the algorithm works by looking at the graphic window.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TOWERS OF HANOÏ
+
+
+The following content is a more detailed description of the files related to the Hanoï problem.
+
+BASE.ML
+
+Base.ml contains the basic function to solve the problem of the towers of Hanoi with n disks (and 3 rods). It returns the number of disk movements.
+
+HANOI_ANIMATION.ML 
+
+This function resolve the problem and draw an animation.
+
+HANOI_GENERATE_DATA.ML
+
+This source code generate a file ("Data10.ml"), which contains the number of movements to resolve the game with a number of disks between 1 and n (in the call in the end, n=10). This data can be used to draw the number of movements depending on the number of disks with the R system. It provides us a way to verify experimentaly that our solution follows the optimized solution which is [number of movements needed for n disks = 1 + 2 * number of movements needed for (n-1) disks].
