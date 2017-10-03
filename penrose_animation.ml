@@ -23,17 +23,17 @@ let wait dt =
   in aux dt;;
 
 let draw points =
-  let rec draw_triangle points = match points with
-    |[] -> ()
-    |t::q ->
-       begin
-	 wait 0.1;
-	 moveto (int_of_float t.(0).(0)) (int_of_float t.(0).(1));
-	 lineto (int_of_float t.(1).(0)) (int_of_float t.(1).(1));
-	 lineto (int_of_float t.(2).(0)) (int_of_float t.(2).(1));
-	 lineto (int_of_float t.(0).(0)) (int_of_float t.(0).(1));
-	 draw_triangle q
-       end
+  let rec draw_triangle points =
+  	if points == [] then ()
+	else let t = List.hd points and q = List.tl points in 
+       		begin
+			 wait 0.1;
+			 moveto (int_of_float t.(0).(0)) (int_of_float t.(0).(1));
+			 lineto (int_of_float t.(1).(0)) (int_of_float t.(1).(1));
+			 lineto (int_of_float t.(2).(0)) (int_of_float t.(2).(1));
+			 lineto (int_of_float t.(0).(0)) (int_of_float t.(0).(1));
+			 draw_triangle q
+       		end
   in draw_triangle points
 ;;
 
