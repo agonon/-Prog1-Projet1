@@ -23,9 +23,9 @@ let wait dt =
   in aux dt;;
 
 let draw points =
-  let rec draw_edges points = match points with
-    |[] -> ()
-    |t::q ->
+  let rec draw_edges points = 
+  if points == [] then ()
+  else let t = List.hd points and q = List.tl points in
        begin
 	 wait 0.1;
 	 moveto (int_of_float t.(0).(0)) (int_of_float t.(0).(1));
