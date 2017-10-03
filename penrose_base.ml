@@ -20,9 +20,9 @@ let vertex_calcul x y =
   u;;
 
 let draw points =
-  let rec draw_triangle points = match points with
-    |[] -> ()
-    |t::q ->
+  let rec draw_triangle points =
+    if points == [] then ()
+    else let t = List.hd points and q = List.tl points in 
        begin
 	 moveto (int_of_float t.(0).(0)) (int_of_float t.(0).(1));
 	 lineto (int_of_float t.(1).(0)) (int_of_float t.(1).(1));
