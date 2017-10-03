@@ -56,13 +56,17 @@ let width_division generation triangles type_init points =
 	 let u = vertex_calcul x y in
 	 if a = "obtuse" then
 	   begin
-	     let new_triangles = [[|y;z;u|]; [|z; x; u|]] and new_types = ["obtuse"; "acute"] and new_points = [|z;u|] in
+	     let new_triangles = [[|y;z;u|]; [|z; x; u|]] 
+	     and new_types = ["obtuse"; "acute"] 
+	     and new_points = [|z;u|] in
 	     divide_current_gen (generation) t b points (new_triangles@next_gen) (new_types@type_next_gen) (new_points::points_next_gen)
 	   end
 	 else
 	   let v = vertex_calcul y z in
 	   begin
-	     let new_triangles = [[|z; x; v|]; [|v; x ;u|]; [|y; v; u|]] and new_types = ["acute"; "acute"; "obtuse"] and new_points = [[|x; v|]; [|v; u|]] in
+	     let new_triangles = [[|z; x; v|]; [|v; x ;u|]; [|y; v; u|]] 
+	     and new_types = ["acute"; "acute"; "obtuse"] 
+	     and new_points = [[|x; v|]; [|v; u|]] in
 	     divide_current_gen (generation) t b points (new_triangles@next_gen) (new_types@type_next_gen) (new_points@points_next_gen)
 	   end
        end
